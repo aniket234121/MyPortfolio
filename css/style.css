@@ -1,0 +1,139 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    
+    font-family: gilroy;
+    
+}
+@font-face {
+    font-family: gilroy;
+    src: url("../fonts/Gilroy\ Font/Gilroy-Bold.woff");
+}
+@font-face {
+    font-family: gilroy;
+    src: url("../fonts/Gilroy\ Font/Gilroy-ExtraBold.woff");
+}
+.loader{
+    position: relative;
+    height:100vh;
+    width: 100vw;
+    background-color: rgb(285, 195, 8);
+    animation: bgAnimation 2s;
+}
+.box{
+    /* background-color: white; */
+    width: 70vw;
+    height: 30vh;
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-10deg);
+    text-align: center;
+}
+.loading{
+    font-size: 18vw;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-text-stroke-width: 0.9px;
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-fill-color: transparent;
+    outline: none;
+}
+.scramble{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 10vw;
+    color: #fff;
+    letter-spacing: 10px;
+}
+.underscore{
+    position: relative;
+    width: 45vw;
+    height: 1.5vh;
+    background-color: #fff;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.underscore::after{
+    content: '';
+    position: absolute;
+    bottom: 11%;
+    height: 100%;
+    left: 0%;
+    right: 0%;
+    border: 1px solid #fff;
+    animation: loadAnimation 2s;
+    
+}
+@keyframes loadAnimation {
+    0%{
+        right:100%;
+        background-color: #a28089;
+    }
+    25%{
+        right:75%;
+        background-color: #b95bf8;
+    }
+    50%{
+        right: 50%;
+        background-color: #b17bef;
+    }
+    75%{
+        right: 25%;
+        background-color: #619ee3;
+    }
+    100%{
+        right: 0%;
+        background-color: rgb(285, 195, 8);
+    }
+}
+@keyframes bgAnimation {
+    0%{
+       
+        background-color: #a28089;
+    }
+    25%{
+       
+        background-color: #b95bf8;
+    }
+    50%{
+        
+        background-color: #b17bef;
+    } 
+    75%{
+        
+        background-color: #619ee3;
+    }
+    100%{
+        
+        background-color: rgb(285, 195, 8);
+    }
+}
+
+@media ( max-width:440px ) {
+    .underscore{
+        top:56%;
+        width: 58vw;
+        height: 0.5vh;
+    }
+    .scramble{
+        top:43%
+    }
+}
+main{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
